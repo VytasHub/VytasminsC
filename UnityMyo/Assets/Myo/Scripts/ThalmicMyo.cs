@@ -10,9 +10,12 @@ using UnlockType = Thalmic.Myo.UnlockType;
 // Represents a Myo armband. Myo's orientation is made available through transform.localRotation, and other properties
 // like the current pose are provided explicitly below. All spatial data about Myo is provided following Unity
 // coordinate system conventions (the y axis is up, the z axis is forward, and the coordinate system is left-handed).
-public class ThalmicMyo : MonoBehaviour {
+public class ThalmicMyo : MonoBehaviour 
+{
 
 	bool lifted = false;
+
+
     // True if and only if Myo has detected that it is on an arm.
     public bool armSynced;
 
@@ -175,8 +178,8 @@ public class ThalmicMyo : MonoBehaviour {
 
 	void Curl()
 	{
-		transform.localRotation = new Quaternion(_myoQuaternion.Y, _myoQuaternion.Z, -_myoQuaternion.X, -_myoQuaternion.W);
-		//print (_myoQuaternion.X);_myoQuaternion.Y, _myoQuaternion.Z, -_myoQuaternion.X, -_myoQuaternion.W
+		//transform.localRotation = new Quaternion(_myoQuaternion.Y, _myoQuaternion.Z, -_myoQuaternion.X, -_myoQuaternion.W);
+		transform.localRotation = new Quaternion(_myoQuaternion.Y , _myoQuaternion.Z , -_myoQuaternion.X , -_myoQuaternion.W);
 
 
 		//Vector3 eulerAngles = transform.localRotation.eulerAngles;
@@ -184,10 +187,15 @@ public class ThalmicMyo : MonoBehaviour {
 
 		//Debug.DrawLine(Vector3.zero, new Vector3(1, 0, 0), Color.red);
 		//print(xrot);
-		accelerometer = new Vector3(_myoAccelerometer.Y, _myoAccelerometer.Z, -_myoAccelerometer.X);
+		//= Global.youtput
+		accelerometer = new Vector3(_myoAccelerometer.Y, _myoAccelerometer.Z, -_myoAccelerometer.X );
 		Vector3 eulerAngles = transform.localRotation.eulerAngles;
 
-		Debug.Log("transform.rotation angles x: " + eulerAngles.x + " y: " + eulerAngles.y + " z: " + eulerAngles.z);
+		Global.xoutput = eulerAngles.x;
+		Global.youtput = eulerAngles.y;
+		Global.zoutput = eulerAngles.z;
+
+		//Debug.Log("transform.rotation angles x: " + eulerAngles.x + " y: " + eulerAngles.y + " z: " + eulerAngles.z);
 		if (eulerAngles.x > 350 && eulerAngles.x < 360) 
 		{ //arm down
 			lifted = true;
