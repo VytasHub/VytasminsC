@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/DevelopmentMyo.unity
+- path: Assets/Scenes/Scene_1_Curl.unity
   isLoaded: 1
   isActive: 1
