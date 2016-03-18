@@ -9,7 +9,9 @@ public class BallMovement : MonoBehaviour
 
 	void Start () 
 	{
-		
+		print("Starting " + Time.time);
+		StartCoroutine(WaitAndPrint(2.0F));
+		print("Before WaitAndPrint Finishes " + Time.time);
 	}
 
 
@@ -26,7 +28,7 @@ public class BallMovement : MonoBehaviour
 	void MoveBall()
 	{
 		gameObject.transform.position = new Vector3(0,(Global.xoutput/50)-4,0);
-		Debug.Log("Development angles x: " + Global.xoutput + " y: " + Global.youtput + " z: " + Global.zoutput);
+		//Debug.Log("Development angles x: " + Global.xoutput + " y: " + Global.youtput + " z: " + Global.zoutput);
 
 		if(Global.xoutput > 359.9)
 		{
@@ -43,6 +45,12 @@ public class BallMovement : MonoBehaviour
 		}
 
 
+	}
+
+	IEnumerator WaitAndPrint(float waitTime) 
+	{
+		yield return new WaitForSeconds(waitTime);
+		print("WaitAndPrint " + Time.time);
 	}
 
 
