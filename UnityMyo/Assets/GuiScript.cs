@@ -26,12 +26,19 @@ public class GuiScript : MonoBehaviour
 
 	void OnGUI ()
 	{
-		GUI.skin.label.fontSize = 20;
-		GUI.color = Color.black;
+		//GUI.skin.label.fontSize = 20;
+		//GUI.color = Color.black;
 
 		ThalmicHub hub = ThalmicHub.instance;
 
-		GUI.Label(new Rect(20, 25, Screen.width, Screen.height), "Count: "+ Global.repCounter);
+		//GUI.Label(new Rect(160, 25, Screen.width, Screen.height), "Count: "+ Global.repCounter);
+
+		GUIStyle style = new GUIStyle ();
+		style.font = (Font)Resources.Load ("LemonMilk",typeof (Font));
+		style.fontSize = 50;
+		style.normal.textColor = Color.black;
+		GUI.Label(new Rect(120, 0, Screen.width, Screen.height), "Count: "+ Global.repCounter, style);
+
 
 		// Access the ThalmicMyo script attached to the Myo object.
 	
