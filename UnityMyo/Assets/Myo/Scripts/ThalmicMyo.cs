@@ -178,16 +178,15 @@ public class ThalmicMyo : MonoBehaviour
 
 	void Curl()
 	{
-		//transform.localRotation = new Quaternion(_myoQuaternion.Y, _myoQuaternion.Z, -_myoQuaternion.X, -_myoQuaternion.W);
+
+		//print("Starting " + Time.time);
+		//StartCoroutine(WaitAndPrint(2.0F));
+		//print("Before WaitAndPrint Finishes " + Time.time);
+
+
+
 		transform.localRotation = new Quaternion(_myoQuaternion.Y , _myoQuaternion.Z , -_myoQuaternion.X , -_myoQuaternion.W);
 
-
-		//Vector3 eulerAngles = transform.localRotation.eulerAngles;
-		//Debug.Log("transform.rotation angles x: " + eulerAngles.x + " y: " + eulerAngles.y + " z: " + eulerAngles.z); 
-
-		//Debug.DrawLine(Vector3.zero, new Vector3(1, 0, 0), Color.red);
-		//print(xrot);
-		//= Global.youtput
 		accelerometer = new Vector3(_myoAccelerometer.Y, _myoAccelerometer.Z, -_myoAccelerometer.X );
 		Vector3 eulerAngles = transform.localRotation.eulerAngles;
 
@@ -199,6 +198,10 @@ public class ThalmicMyo : MonoBehaviour
 		if (eulerAngles.x > 350 && eulerAngles.x < 360) 
 		{ //arm down
 			lifted = true;
+
+			//print("Starting " + Time.time);
+			//StartCoroutine(WaitAndPrint(2.0F));
+			//print("Before WaitAndPrint Finishes " + Time.time);
 		}
 
 		if (lifted == true) 
@@ -209,7 +212,7 @@ public class ThalmicMyo : MonoBehaviour
 			if (eulerAngles.x > 280 && eulerAngles.x < 300) 
 			{
 
-				print ("Second Loop");
+				//print ("Second Loop");
 				Global.repCounter++;
 				lifted = false;
 
@@ -218,6 +221,12 @@ public class ThalmicMyo : MonoBehaviour
 		}
 
 
+	}
+
+	IEnumerator WaitAndPrint(float waitTime) 
+	{
+		yield return new WaitForSeconds(waitTime);
+		//print("WaitAndPrint " + Time.time);
 	}
 
 

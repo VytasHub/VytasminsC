@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GuiScript : MonoBehaviour 
+public class Gui_S1 : MonoBehaviour 
 {
 
 	//public Text curlCount;

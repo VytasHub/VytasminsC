@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BallMovement : MonoBehaviour 
-{
-	
+public class Ball_S2 : MonoBehaviour {
+
 	float curlX = 0;
 	bool flip = false;
 
@@ -36,8 +35,5 @@ public class BallMovement : MonoBehaviour
 		yield return new WaitForSeconds(waitTime);
 		print("WaitAndPrint " + Time.time);
 	}
-
-
-
 
 }
