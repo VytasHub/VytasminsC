@@ -73,7 +73,7 @@ public class ThalmicMyo : MonoBehaviour
 
     void Update() 
 	{
-		Curl ();
+		//Curl ();
 
 
 
