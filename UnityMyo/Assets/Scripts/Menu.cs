@@ -7,6 +7,13 @@ public class Menu : MonoBehaviour
 
 	void OnGUI()
 	{
+		//ThalmicHub hub = ThalmicHub.instance;
+
+
+
+		// Access the ThalmicMyo script attached to the Myo object.
+		//ThalmicMyo thalmicMyo = myo.GetComponent<ThalmicMyo> ();
+
 		if (GUI.Button (new Rect (Screen.width/2.5f,Screen.width/10, Screen.width/5,Screen.width/10), "Scene_1")) 
 		{
 			Application.LoadLevel (1);
@@ -26,6 +33,8 @@ public class Menu : MonoBehaviour
 			Application.Quit();
 
 		}
+
+		//ThalmicHub hub = ThalmicHub.instance;
 	}
 
 

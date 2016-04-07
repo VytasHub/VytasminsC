@@ -14,7 +14,7 @@ public class SampleSceneGUI : MonoBehaviour
     {
         GUI.skin.label.fontSize = 20;
 
-        ThalmicHub hub = ThalmicHub.instance;
+       ThalmicHub hub = ThalmicHub.instance;
 
 		GUI.Label(new Rect(20, 25, Screen.width, Screen.height), "Count: "+ Global.repCounter);
 
